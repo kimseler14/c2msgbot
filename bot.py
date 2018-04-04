@@ -58,7 +58,7 @@ def start_xmpp(username,password,user_list,content,proxy):
         else:
             print("error on connect.")
     except IqError as e:
-	    print('error'+e)
+	    print('error : '+e)
 
 if __name__ == '__main__':
     optp = OptionParser()
@@ -96,7 +96,7 @@ if __name__ == '__main__':
     hdr = {"User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"}
     while True:
         user_list = []
-        req = urllib.request.Request("https://api.c2me.cc/b/shuffle_filter?nick="+username+"&password="+password+"&distance=110&order_by_last_online",headers=hdr)
+        req = urllib.request.Request("https://api.c2me.cc/b/shuffle_filter?nick="+username+"&password="+password+"&order_by_last_online",headers=hdr)
         resp = urllib.request.urlopen(req)
         data = json.loads(resp.read().decode())
         for user in data["online_users"]:
