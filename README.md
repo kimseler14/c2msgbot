@@ -1,5 +1,5 @@
 # c2msgbot
-connected2.me auto message bot
+connected2.me auto message to last online users
 
 # requirements
 * Python 3.6
